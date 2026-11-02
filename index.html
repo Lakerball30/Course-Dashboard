@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Course Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Dynamic Course Dashboard</h1>
+  </header>
+ 
+  <main>
+    <section class="panel" aria-labelledby="controls-heading">
+      <h2 id="controls-heading">Controls</h2>
+ 
+      <div class="controls">
+        <label>
+          Data set
+          <select id="dataset-select">
+            <option value="full">Full data</option>
+            <option value="empty">Empty array</option>
+            <option value="missingOptional">Record with missing optional field</option>
+            <option value="invalid">Contains invalid records</option>
+          </select>
+        </label>
+ 
+        <label>
+          Status
+          <select id="status-filter">
+            <option value="all">All</option>
+            <option value="open">Open</option>
+            <option value="waitlist">Waitlist</option>
+            <option value="full">Full</option>
+          </select>
+        </label>
+ 
+        <label>
+          Level
+          <select id="level-filter">
+            <option value="all">All</option>
+            <option value="intro">Intro</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+ 
+        <label>
+          Search
+          <input type="search" id="search-input" placeholder="Title, code, or instructor">
+        </label>
+ 
+        <button type="button" id="selector-failure-btn">Test selector failure</button>
+      </div>
+    </section>
+ 
+    <section class="panel" aria-labelledby="status-heading">
+      <h2 id="status-heading">Messages</h2>
+      <div id="app-status" role="status" aria-live="polite" class="message" data-type="info">
+        Loading...
+      </div>
+    </section>
+ 
+    <section class="panel" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <div id="summary" class="summary-grid"></div>
+    </section>
+ 
+    <section class="panel" aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Courses</h2>
+      <div id="course-list" class="course-grid"></div>
+    </section>
+  </main>
+</body>
+</html>

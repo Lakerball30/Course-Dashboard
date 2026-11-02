@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  margin: 0;
+}
+ 
+header, footer {
+  background: #2b5fd9;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+ 
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+ 
+.panel {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+ 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+ 
+.controls label {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.message {
+  padding: 0.5rem;
+  background: #e8efff;
+}
+.message[data-type="warning"] { background: #fff3d6; }
+.message[data-type="error"] { background: #fde0de; }
+ 
+.summary-grid,
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+ 
+.summary-card,
+.course-card {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+}
+ 
+.summary-card .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+ 
+.course-card h3 { margin: 0; }
+.course-card .code { margin: 0 0 0.5rem; color: #666; }
+.course-card dl { margin: 0; }
+.course-card dt { font-weight: bold; }
+.course-card dd { margin: 0 0 0.4rem; }
+ 
+.course-card[data-status="open"] { border-left: 5px solid green; }
+.course-card[data-status="waitlist"] { border-left: 5px solid orange; }
+.course-card[data-status="full"] { border-left: 5px solid red; }
+ 
+.fill-text[data-fill="low"] { color: green; }
+.fill-text[data-fill="medium"] { color: orange; }
+.fill-text[data-fill="high"] { color: red; }
+ 
+.badge { text-transform: capitalize; font-weight: bold; }
+.missing { color: #888; font-style: italic; }
